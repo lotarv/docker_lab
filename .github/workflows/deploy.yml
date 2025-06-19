@@ -62,7 +62,8 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+        env:
+          DOCKER_CONFIG: /tmp/.docker
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
